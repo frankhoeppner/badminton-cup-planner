@@ -1,0 +1,456 @@
+{
+  "players" : [ {
+    "name" : "Steffen",
+    "score" : 0
+  }, {
+    "name" : "Andreas",
+    "score" : 12
+  }, {
+    "name" : "Janine",
+    "score" : 0
+  }, {
+    "name" : "Leo",
+    "score" : 0
+  }, {
+    "name" : "Corinna",
+    "score" : 21
+  }, {
+    "name" : "Alex",
+    "score" : 0
+  }, {
+    "name" : "Manuel",
+    "score" : 0
+  }, {
+    "name" : "Luisa",
+    "score" : 21
+  }, {
+    "name" : "Frank",
+    "score" : 0
+  }, {
+    "name" : "Björn",
+    "score" : 0
+  }, {
+    "name" : "Paul",
+    "score" : 12
+  } ],
+  "numberOfCourts" : 3,
+  "numberOfRounds" : 8,
+  "gameRounds" : {
+    "1" : [ {
+      "team1" : [ {
+        "name" : "Corinna",
+        "score" : 168
+      }, {
+        "name" : "Luisa",
+        "score" : 168
+      } ],
+      "team2" : [ {
+        "name" : "Andreas",
+        "score" : 96
+      }, {
+        "name" : "Paul",
+        "score" : 96
+      } ],
+      "team1Points" : 21,
+      "team2Points" : 12
+    }, {
+      "team1" : [ {
+        "name" : "Frank",
+        "score" : 0
+      }, {
+        "name" : "Manuel",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Steffen",
+        "score" : 0
+      }, {
+        "name" : "Janine",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Andreas",
+        "score" : 0
+      }, {
+        "name" : "Corinna",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Leo",
+        "score" : 0
+      }, {
+        "name" : "Leo",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    } ],
+    "2" : [ {
+      "team1" : [ {
+        "name" : "Corinna",
+        "score" : 0
+      }, {
+        "name" : "Leo",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Luisa",
+        "score" : 0
+      }, {
+        "name" : "Steffen",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Andreas",
+        "score" : 0
+      }, {
+        "name" : "Luisa",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Steffen",
+        "score" : 0
+      }, {
+        "name" : "Leo",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Frank",
+        "score" : 0
+      }, {
+        "name" : "Björn",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Manuel",
+        "score" : 0
+      }, {
+        "name" : "Janine",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    } ],
+    "3" : [ {
+      "team1" : [ {
+        "name" : "Manuel",
+        "score" : 0
+      }, {
+        "name" : "Björn",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Paul",
+        "score" : 0
+      }, {
+        "name" : "Frank",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Luisa",
+        "score" : 0
+      }, {
+        "name" : "Frank",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Frank",
+        "score" : 0
+      }, {
+        "name" : "Janine",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Manuel",
+        "score" : 0
+      }, {
+        "name" : "Paul",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Frank",
+        "score" : 0
+      }, {
+        "name" : "Leo",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    } ],
+    "4" : [ {
+      "team1" : [ {
+        "name" : "Steffen",
+        "score" : 0
+      }, {
+        "name" : "Steffen",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Alex",
+        "score" : 0
+      }, {
+        "name" : "Björn",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Corinna",
+        "score" : 0
+      }, {
+        "name" : "Andreas",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Andreas",
+        "score" : 0
+      }, {
+        "name" : "Steffen",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Andreas",
+        "score" : 0
+      }, {
+        "name" : "Björn",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Andreas",
+        "score" : 0
+      }, {
+        "name" : "Corinna",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    } ],
+    "5" : [ {
+      "team1" : [ {
+        "name" : "Paul",
+        "score" : 0
+      }, {
+        "name" : "Frank",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Frank",
+        "score" : 0
+      }, {
+        "name" : "Frank",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Alex",
+        "score" : 0
+      }, {
+        "name" : "Manuel",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Corinna",
+        "score" : 0
+      }, {
+        "name" : "Leo",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Alex",
+        "score" : 0
+      }, {
+        "name" : "Paul",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Steffen",
+        "score" : 0
+      }, {
+        "name" : "Leo",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    } ],
+    "6" : [ {
+      "team1" : [ {
+        "name" : "Björn",
+        "score" : 0
+      }, {
+        "name" : "Steffen",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Janine",
+        "score" : 0
+      }, {
+        "name" : "Luisa",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Corinna",
+        "score" : 0
+      }, {
+        "name" : "Alex",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Andreas",
+        "score" : 0
+      }, {
+        "name" : "Andreas",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Paul",
+        "score" : 0
+      }, {
+        "name" : "Andreas",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Steffen",
+        "score" : 0
+      }, {
+        "name" : "Luisa",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    } ],
+    "7" : [ {
+      "team1" : [ {
+        "name" : "Luisa",
+        "score" : 0
+      }, {
+        "name" : "Alex",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Manuel",
+        "score" : 0
+      }, {
+        "name" : "Manuel",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Corinna",
+        "score" : 0
+      }, {
+        "name" : "Paul",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Andreas",
+        "score" : 0
+      }, {
+        "name" : "Leo",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Björn",
+        "score" : 0
+      }, {
+        "name" : "Frank",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Frank",
+        "score" : 0
+      }, {
+        "name" : "Frank",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    } ],
+    "8" : [ {
+      "team1" : [ {
+        "name" : "Luisa",
+        "score" : 0
+      }, {
+        "name" : "Paul",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Alex",
+        "score" : 0
+      }, {
+        "name" : "Paul",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Björn",
+        "score" : 0
+      }, {
+        "name" : "Alex",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Leo",
+        "score" : 0
+      }, {
+        "name" : "Luisa",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    }, {
+      "team1" : [ {
+        "name" : "Janine",
+        "score" : 0
+      }, {
+        "name" : "Andreas",
+        "score" : 0
+      } ],
+      "team2" : [ {
+        "name" : "Frank",
+        "score" : 0
+      }, {
+        "name" : "Janine",
+        "score" : 0
+      } ],
+      "team1Points" : 0,
+      "team2Points" : 0
+    } ]
+  }
+}
