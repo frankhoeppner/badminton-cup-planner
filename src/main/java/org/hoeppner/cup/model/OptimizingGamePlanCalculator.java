@@ -16,13 +16,13 @@ public class OptimizingGamePlanCalculator extends GamePlanCalculator {
 	}
 
 	@Override
-	public Map<Integer, List<Game>> generateGamePlan(List<Player> players, int numberOfRounds, int numberOfCourts) throws GameFailedException {
+	public Map<Integer, List<Game>> generateGamePlan(List<Player> players, int numberOfRounds, int numberOfCourts, int minimumOpponentCount, int maxTrials) throws GameFailedException {
 		boolean succeeded = false;
 		int trials = 0;
 		Map<Integer, List<Game>> gameRounds = new HashMap<Integer, List<Game>>();
 		players.stream().forEach(Player::reset);
 		int round = 1;
-		while (!succeeded && trials < 1000) {
+		while (!succeeded && trials < maxTrials) {
 			try {
 				while (round <= numberOfRounds) {
 					List<Game> games = generateRound(players, numberOfCourts);
@@ -32,7 +32,7 @@ public class OptimizingGamePlanCalculator extends GamePlanCalculator {
 					gameRounds.put(round, games);
 					round++;
 				}
-				if (getMinimumOpponentCount(players) < 10) {
+				if (getMinimumOpponentCount(players) < minimumOpponentCount) {
 					throw new GameFailedException();
 				}
 				succeeded = true;
@@ -43,7 +43,9 @@ public class OptimizingGamePlanCalculator extends GamePlanCalculator {
 				round = 1;
 			}
 		}
+		System.out.println("getMinimumOpponentCount: " + getMinimumOpponentCount(players));
 		if (gameRounds.size() < numberOfRounds) {
+			System.out.println(gameRounds.size());
 			throw new GameFailedException();
 		}
 		for (Player player : players) {

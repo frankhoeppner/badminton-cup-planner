@@ -110,6 +110,22 @@ public class PlannerController implements SelectionListener, FocusListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} else if (event.getSource() == plannerWindow.getMinimumOpponentCountText()) {
+			try {
+				gamePlan.setMinimumOpponentCount(Integer.parseInt(plannerWindow.getMinimumOpponentCountText().getText()));
+				gamePlan.save();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if (event.getSource() == plannerWindow.getTrialsText()) {
+			try {
+				gamePlan.setTrials(Integer.parseInt(plannerWindow.getTrialsText().getText()));
+				gamePlan.save();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			System.out.println("No Handler found: " + event.getSource());
 		}

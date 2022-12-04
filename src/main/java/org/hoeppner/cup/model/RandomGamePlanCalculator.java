@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomGamePlanCalculator extends GamePlanCalculator {
 
 	@Override
-	public Map<Integer, List<Game>> generateGamePlan(List<Player> players,  int numberOfRounds, int numberOfCourts) {
+	public Map<Integer, List<Game>> generateGamePlan(List<Player> players,  int numberOfRounds, int numberOfCourts, int minimumOpponentCount, int maxTrials) {
 		Map<Integer, List<Game>> gameRounds = new HashMap<Integer, List<Game>>();
 		for (Player player : players) {
 			player.reset();
@@ -18,7 +18,7 @@ public class RandomGamePlanCalculator extends GamePlanCalculator {
 		int round = 0;
 		int failedTrials = 0;
 		System.out.println("Calculating " + numberOfRounds + " Rounds!");
-		while (round < numberOfRounds && failedTrials < 10000) {
+		while (round < numberOfRounds && failedTrials < maxTrials) {
 			System.out.println("Number of Players: " + players.size());
 			List<Player> availablePlayers = clonePlayers(players);
 			List<Game> games = new ArrayList<Game>();

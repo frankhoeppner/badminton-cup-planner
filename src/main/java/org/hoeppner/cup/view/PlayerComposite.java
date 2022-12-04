@@ -20,6 +20,8 @@ public class PlayerComposite extends Composite {
 
 	final Text numberOfCourtsText;
 	final Text numberOfRoundsText;
+	final Text minimumOpponentCountText;
+	final Text trialsText;
 	final Text playerText;
 	final Button playerAddButton;
 	final List playerList;
@@ -58,6 +60,32 @@ public class PlayerComposite extends Composite {
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.grabExcessHorizontalSpace = true;
 		numberOfRoundsText.setLayoutData(gridData);
+
+		final Label minOpponentCountLabel = new Label(this, SWT.HORIZONTAL);
+		minOpponentCountLabel.setText(plannerProprties.getSetupMinimumOpponentCount());
+
+		minimumOpponentCountText = new Text(this, SWT.SINGLE | SWT.BORDER);
+		minimumOpponentCountText.setText(String.valueOf(plannerController.getGamePlan().getMinimumOpponentCount()));
+		minimumOpponentCountText.addFocusListener(plannerController);
+		
+		gridData = new GridData();
+		gridData.horizontalSpan = 2;
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.grabExcessHorizontalSpace = true;
+		minimumOpponentCountText.setLayoutData(gridData);
+
+		final Label trialsLabel = new Label(this, SWT.HORIZONTAL);
+		trialsLabel.setText(plannerProprties.getSetupTrials());
+
+		trialsText = new Text(this, SWT.SINGLE | SWT.BORDER);
+		trialsText.setText(String.valueOf(plannerController.getGamePlan().getTrials()));
+		trialsText.addFocusListener(plannerController);
+		
+		gridData = new GridData();
+		gridData.horizontalSpan = 2;
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.grabExcessHorizontalSpace = true;
+		trialsText.setLayoutData(gridData);
 		
 		final Label spielernameLabel = new Label(this, SWT.HORIZONTAL);
 		spielernameLabel.setText(plannerProprties.getSetupName());
@@ -122,6 +150,14 @@ public class PlayerComposite extends Composite {
 
 	public Text getNumberOfCourtsText() {
 		return numberOfCourtsText;
+	}
+
+	public Text getMinimumOpponentCountText() {
+		return minimumOpponentCountText;
+	}
+
+	public Text getTrialsText() {
+		return trialsText;
 	}
 
 	public Text getPlayerText() {

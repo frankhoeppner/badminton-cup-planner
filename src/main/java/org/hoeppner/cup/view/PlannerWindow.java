@@ -101,6 +101,14 @@ public class PlannerWindow {
 		return playerComposite.getNumberOfRoundsText();
 	}
 
+	public Text getMinimumOpponentCountText() {
+		return playerComposite.getMinimumOpponentCountText();
+	}
+
+	public Text getTrialsText() {
+		return playerComposite.getTrialsText();
+	}
+
 	public Text getPlayerText() {
 		return playerComposite.getPlayerText();
 	}

@@ -12,7 +12,7 @@ public abstract class GamePlanCalculator {
 	
 	protected Map<Integer, List<Game>> gameRounds = new HashMap<Integer, List<Game>>();
 	
-	public abstract Map<Integer, List<Game>> generateGamePlan(List<Player> players,  int numberOfRounds, int numberOfCourts) throws GameFailedException;
+	public abstract Map<Integer, List<Game>> generateGamePlan(List<Player> players,  int numberOfRounds, int numberOfCourts, int minimumOpponentCount, int trials) throws GameFailedException;
 
 	protected void reset() {
 		

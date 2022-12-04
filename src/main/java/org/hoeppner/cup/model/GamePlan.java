@@ -24,6 +24,8 @@ public class GamePlan {
 	private List<Player> players = new ArrayList<Player>();
 	private int numberOfCourts = 0;
 	private int numberOfRounds = 0;
+	private int minimumOpponentCount = 0;
+	private int trials = 1000;
 	private Map<Integer, List<Game>> gameRounds = new HashMap<Integer, List<Game>>();
 //	private transient GamePlanCalculator gamePlanCalculator = new RandomGamePlanCalculator();
 	private transient GamePlanCalculator gamePlanCalculator = new OptimizingGamePlanCalculator();
@@ -62,7 +64,7 @@ public class GamePlan {
 			}
 		}
 		if (isNewPlayer) {
-			System.out.println("Spieler " + name + " hinzugefügt!");
+			System.out.println("Spieler " + name + " hinzugefï¿½gt!");
 			players.add(new Player(name));
 		}
 		return isNewPlayer;
@@ -80,7 +82,7 @@ public class GamePlan {
 	}
 
 	public void generateGamePlan() throws GameFailedException {
-		this.gameRounds = gamePlanCalculator.generateGamePlan(players, numberOfRounds, numberOfCourts);
+		this.gameRounds = gamePlanCalculator.generateGamePlan(players, numberOfRounds, numberOfCourts, minimumOpponentCount, trials);
 	}
 	
 	public int getNumberOfCourts() {
@@ -97,6 +99,22 @@ public class GamePlan {
 
 	public void setNumberOfRounds(int numberOfRounds) {
 		this.numberOfRounds = numberOfRounds;
+	}
+
+	public int getMinimumOpponentCount() {
+		return minimumOpponentCount;
+	}
+
+	public void setMinimumOpponentCount(int minimumOpponentCount) {
+		this.minimumOpponentCount = minimumOpponentCount;
+	}
+
+	public int getTrials() {
+		return trials;
+	}
+
+	public void setTrials(int trials) {
+		this.trials = trials;
 	}
 
 	public List<Game> getRound(int round) {

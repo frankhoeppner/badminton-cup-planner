@@ -36,6 +36,14 @@ public class PlannerProprties {
 		return properties.getProperty("setup.roundCount");
 	}
 	
+	public String getSetupMinimumOpponentCount() {
+		return properties.getProperty("setup.minimumOpponentCount");
+	}
+	
+	public String getSetupTrials() {
+		return properties.getProperty("setup.trials");
+	}
+	
 	public String getSetupMaxGames() {
 		return properties.getProperty("setup.maxGames");
 	}
