@@ -48,12 +48,12 @@ public class ErgebnisComposite extends Composite {
 	
 	public void updateView() {
 		table.removeAll();
-		for (Player player : plannerController.getGamePlan().getPlayersByScore()) {
+		for (Player player : plannerController.getGamePlan().getPlayersByWeightedScore()) {
 			TableItem item = new TableItem(table, SWT.NONE);
 			item.setText(0, player.getName());
 			item.setText(1, String.valueOf(player.getGameCount()));
 			item.setText(2, String.valueOf(player.getScore()));
-			item.setText(3, String.valueOf(player.getScore() / Math.max(player.getGameCount(), 1)));
+			item.setText(3, String.valueOf(player.getWeightedScore()));
 			item.setText(4, String.valueOf(player.getOpponentCount()));
 		}
 		for (TableColumn tableColumn : tableColumns) {

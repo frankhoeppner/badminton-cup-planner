@@ -46,6 +46,7 @@ public class PlannerController implements SelectionListener, FocusListener {
 			if (event.getSource() == plannerWindow.getPlayerAddButton()) {
 				if (!plannerWindow.getPlayerText().getText().trim().isEmpty()) {
 					if (gamePlan.addPlayer(plannerWindow.getPlayerText().getText())) {
+						gamePlan.updatePlayers();
 						gamePlan.save();
 						plannerWindow.getPlayerList().add(plannerWindow.getPlayerText().getText());
 						plannerWindow.getPlayerText().setText("");
@@ -97,6 +98,7 @@ public class PlannerController implements SelectionListener, FocusListener {
 		if (event.getSource() == plannerWindow.getNumberOfRoundsText()) {
 			try {
 				gamePlan.setNumberOfRounds(Integer.parseInt(plannerWindow.getNumberOfRoundsText().getText()));
+				gamePlan.updatePlayers();
 				gamePlan.save();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

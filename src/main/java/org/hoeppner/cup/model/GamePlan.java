@@ -19,7 +19,7 @@ import com.google.gson.Gson;
 
 public class GamePlan {
 
-	private static final String GAME_PLAN_FILE = "/badminton/game-plan.json";
+	private static final String GAME_PLAN_FILE = "C:\\badminton\\game-plan.json";
 
 	private List<Player> players = new ArrayList<Player>();
 	private int numberOfCourts = 0;
@@ -48,8 +48,20 @@ public class GamePlan {
 		return clonedPlayers;
 	}
 
+	public void updatePlayers() {
+		for (Player player : players) {
+			player.setNumberOfRounds(numberOfRounds);
+		}
+	}
+
 	public List<Player> getPlayersByScore() {
 		Collections.sort(players, Comparator.comparing(Player::getScore).reversed());
+		List<Player> clonedPlayers = players.stream().collect(toList());
+		return clonedPlayers;
+	}
+
+	public List<Player> getPlayersByWeightedScore() {
+		Collections.sort(players, new PlayerScoreComparator());
 		List<Player> clonedPlayers = players.stream().collect(toList());
 		return clonedPlayers;
 	}
@@ -64,7 +76,7 @@ public class GamePlan {
 			}
 		}
 		if (isNewPlayer) {
-			System.out.println("Spieler " + name + " hinzugef�gt!");
+			System.out.println("Spieler " + name + " hinzugefügt!");
 			players.add(new Player(name));
 		}
 		return isNewPlayer;
@@ -153,7 +165,9 @@ public class GamePlan {
 		if (gamePlanFile.exists()) {
 			try (Reader reader = new FileReader(gamePlanFile)) {
 				System.out.println("Lade Spielplan...");
-				return new Gson().fromJson(reader, GamePlan.class);
+				GamePlan gamePlan = new Gson().fromJson(reader, GamePlan.class);
+				gamePlan.updatePlayers();
+				return gamePlan;
 			}
 		} else {
 			System.out.println("Kein Spielplan vorhanden, erzeuge neuen Spielplan...");
@@ -171,5 +185,15 @@ public class GamePlan {
 			new Gson().toJson(this, writer);
 			System.out.println("Spielplan gesichert!");
 		}
+	}
+	
+	public void dump() {
+		System.out.println("===================================================================================================");
+		System.out.println("Gameplan:");
+		System.out.println("---------------------------------------------------------------------------------------------------");
+		for (Player player : players) {
+			player.dump();
+		}
+		System.out.println("===================================================================================================");
 	}
 }

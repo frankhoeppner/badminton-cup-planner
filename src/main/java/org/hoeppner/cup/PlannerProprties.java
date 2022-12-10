@@ -101,9 +101,8 @@ public class PlannerProprties {
 	}
 
 	private Properties loadProperties(String language) throws IOException {
-		String propertiesPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 		Properties properties = new Properties();
-		properties.load(new FileInputStream(propertiesPath + "/" + language + ".properties"));
+		properties.load(new FileInputStream("C:\\badminton\\" + language + ".properties"));
 		return properties;
 	}
 

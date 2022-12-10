@@ -1,5 +1,7 @@
 package org.hoeppner.cup.model;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,21 +13,22 @@ public class Player {
 
 	private String name;
 	private int gameCount;
+	private transient int numberOfRounds;
 	private int score;
 	private List<String> partners = new ArrayList<>();
 	private Map<String, Integer> opponents = new HashMap<>();
-	
+
 	public Player() {
 	}
-	
+
 	public Player(String name) {
 		this.name = name;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public int getGameCount() {
 		return gameCount;
 	}
@@ -33,33 +36,44 @@ public class Player {
 	public int getOpponentCount() {
 		return opponents.size();
 	}
-	
+
 	public int getScore() {
 		return score;
 	}
-	
+
+	public BigDecimal getWeightedScore() {
+		BigDecimal plainScore = BigDecimal.valueOf(score);
+		BigDecimal weightedScore = plainScore.divide(BigDecimal.valueOf(Math.max(getGameCount(), 1)), 2, RoundingMode.HALF_EVEN)
+				.multiply(BigDecimal.valueOf(numberOfRounds)).setScale(2, RoundingMode.HALF_EVEN);
+		return weightedScore;
+	}
+
+	public void setNumberOfRounds(int numberOfRounds) {
+		this.numberOfRounds = numberOfRounds;
+	}
+
 	public void setScore(int score) {
 		this.score = score;
 	}
-	
+
 	public void addScore(int score) {
 		this.score += score;
 	}
-	
+
 	public void reset() {
 		opponents.clear();
 		partners.clear();
 		gameCount = 0;
 		score = 0;
 	}
-	
+
 	public void playsWith(Player player) {
 		partners.add(player.getName());
 		player.partners.add(name);
 		gameCount++;
 		player.gameCount++;
 	}
-	
+
 	public void playsAgainst(Player player1, Player player2) {
 		if (opponents.get(player1.getName()) == null) {
 			opponents.put(player1.getName(), 1);
@@ -72,26 +86,31 @@ public class Player {
 			opponents.put(player2.getName(), opponents.get(player2.getName()) + 1);
 		}
 	}
-	
+
 	public boolean hasPlayedWith(Player player) {
 		return partners.contains(player.getName());
 	}
-	
+
 	public int playedAgainst(Player player) {
 		if (opponents.containsKey(player.getName())) {
 			return opponents.get(player.getName());
 		}
 		return 0;
 	}
-	
+
 	public boolean equals(Player other) {
 		if (other == null) {
 			return false;
 		}
 		return name.equals(other.name);
 	}
-	
+
 	public String toString() {
 		return new Gson().toJson(this);
+	}
+
+	public void dump() {
+		System.out.println(name + ":" + getScore() + " / " + getWeightedScore());
+
 	}
 }
