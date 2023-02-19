@@ -134,6 +134,7 @@ public class PlannerController implements SelectionListener, FocusListener {
 	}
 
 	public static void main(String[] args) throws IOException {
+		// Here is my main
 		PlannerController controller = new PlannerController();
 		controller.start();
 	}
