@@ -1,6 +1,5 @@
 package org.hoeppner.cup;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -102,7 +101,8 @@ public class PlannerProprties {
 
 	private Properties loadProperties(String language) throws IOException {
 		Properties properties = new Properties();
-		properties.load(new FileInputStream("C:\\badminton\\" + language + ".properties"));
+		// properties.load(new FileInputStream("C:\\badminton\\" + language + ".properties"));
+		properties.load(getClass().getResourceAsStream("/de.properties"));
 		return properties;
 	}
 
